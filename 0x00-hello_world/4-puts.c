@@ -1,7 +1,7 @@
 #include <stdio.h>
-/*
- *write program that use puts function to print line
- *and end with return 0 this success
+/**
+ * main - is afunction that makes program(puts) function to print line
+ * Return: (0) is (success)
  */
 int main(void)
 {
