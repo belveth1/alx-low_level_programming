@@ -1,4 +1,4 @@
-#include <stdlio.h>
+#include <stdio.h>
 #include <time.h>
 /**
  * main - this function print rondom numbers and check postive or negatve
