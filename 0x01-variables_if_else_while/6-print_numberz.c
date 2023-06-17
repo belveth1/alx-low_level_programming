@@ -10,5 +10,5 @@ for (num = 0 ; num < 10 ; num++)
 {
 putchar(num+48);
 }
-putchar("\n");
+putchar('\n');
 return (0);
