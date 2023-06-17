@@ -6,7 +6,7 @@
 int main(void)
 {
 int hexa;
-for (hexa = 1; hexa <= 9; hexa++)
+for (hexa = 0; hexa <= 9; hexa++)
 putchar(hexa + 48);
 for (hexa = 'a'; hexa <= 'f'; hexa++)
 putchar(hexa);
