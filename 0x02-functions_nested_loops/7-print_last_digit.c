@@ -15,6 +15,6 @@ else
 {
 last_digit = n % 10;
 }
-_putchar(48 + n);
+_putchar('0' + n);
 return (last_digit);
 }
