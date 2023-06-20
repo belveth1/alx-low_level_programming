@@ -1,7 +1,6 @@
 #include "main.h"
 /**
- *main - this print out alpha with lower case with putchar function
- *Return:0 is success
+ *print_alphabet - this print out alpha with lower case with _putchar function
  */
 void print_alphabet(void)
 {
