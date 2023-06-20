@@ -1,13 +1,12 @@
-#include <stdio.h>
+#include "main.h"
 /**
  *main - this print out alpha with lower case with putchar function
  *Return:0 is success
  */
-int main(void)
+void print_alphabet(void)
 {
 int alph;
 for (alph = 'a' ; alph <= 'z' ; alph++)
-putchar(alph);
-putchar('\n');
-return (0);
+_putchar(alph);
+_putchar('\n');
 }
