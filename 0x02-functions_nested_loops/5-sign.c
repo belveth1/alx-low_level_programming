@@ -1,31 +1,30 @@
-#include "main.h"
+#include"main.h"
+
 /**
- *_isalpha - check for sign of number
- *@n: the number is to be checked
- *Return: 1 for + sign 0 for zero -1 for - sign
- */
+ * print_sign - print + if n is greater than zero,
+ *             0 if n is zero and - if n is less
+ *             than zero.
+ *
+ * @n: takes integer type input for function.
+ *
+ * Return: 1 if +, 0 if 0 and -1 if -
+*/
+
 int print_sign(int n)
 {
-if (n > 0)
-{
-_putchar(43);
-_putchar(44);
-_putchar(' ');
-return (1);
-}
-else if (n = 0)
-{
-_putchar(48);
-_putchar(44);
-_putchar(' ');
-return(0);
-}
-else
-{
-_putchar(45);
-_putchar(44);
-_putchar(' ');
-return (-1);
-}
-_putchar('\n')
+	if (n > 0)
+	{
+		_putchar(43 + 0);
+		return (1);
+	}
+	else if (n == 0)
+	{
+		_putchar(0 + 48);
+		return (0);
+	}
+	else
+	{
+		_putchar(45 + 0);
+		return (-1);
+	}
 }
