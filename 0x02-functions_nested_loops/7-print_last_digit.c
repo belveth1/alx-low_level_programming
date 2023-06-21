@@ -1,9 +1,9 @@
 #include"main.h"
 /**
-  *print_last_digit - print last digit of a number.
-  *@n: takes number input
-  *Return: lastDigit
- **/
+ *print_last_digit - function that computes the absolute value number
+ *@n: the number is to be checked
+ *Return: last_digit of the number
+ */
 int print_last_digit(int n)
 {
 int lastDigit;
