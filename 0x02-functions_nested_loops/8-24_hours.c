@@ -9,7 +9,7 @@ int mint, hr;
 
 for (hr = 0; hr <= 23; ++hr)
 {
-for (min = 0; min <= 59; ++min)
+for (mint = 0; mint <= 59; ++mint)
 {
 _putchar((hr / 10) + 48);
 _putchar((hr % 10) + 48);
