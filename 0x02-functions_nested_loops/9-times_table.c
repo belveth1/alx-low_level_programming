@@ -10,7 +10,7 @@ int num, x, y;
 for (num = 0; num <= 9; ++num)
 {
 _putchar(48);
-for (mult = 1; x <= 9; ++x)
+for (x = 1; x <= 9; ++x)
 {
 _putchar(',');
 _putchar(' ');
@@ -18,8 +18,8 @@ prod = num * x;
 if (y <= 9)
 _putchar(' ');
 else
-_putchar((prod / 10) + 48);
-_putchar((prod % 10) + 48);
+_putchar((y / 10) + 48);
+_putchar((y % 10) + 48);
 }
 _putchar('\n');
 }
