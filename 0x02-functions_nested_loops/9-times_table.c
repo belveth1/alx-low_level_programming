@@ -14,7 +14,7 @@ for (x = 1; x <= 9; ++x)
 {
 _putchar(',');
 _putchar(' ');
-prod = num * x;
+y = num * x;
 if (y <= 9)
 _putchar(' ');
 else
