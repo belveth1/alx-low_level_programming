@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include "main.h"
 /**
 *main -Write a function that write fizz buzz code
 */
