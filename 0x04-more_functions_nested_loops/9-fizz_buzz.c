@@ -9,19 +9,19 @@ for (i = 1; i <= 100; i++)
 {
 if (i % 3 == 0)
 {
-printf("fizz");
+printf("Fizz");
 printf(" ");
 continue;
 }
 else if (i % 5 == 0)
 {
-printf("buzz");
+printf("Fizz");
 printf(" ");
 continue;
 }
 else if ((i % 3 == 0) && (i % 5 == 0))
 {
-printf("fizzbuzz");
+printf("FizzBuzz");
 printf(" ");
 continue;
 }
