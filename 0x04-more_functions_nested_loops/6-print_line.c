@@ -9,9 +9,13 @@ int d;
 for (d = 0; d <= n; d++)
 {
 if (n <= 0)
+{	
 break;
+}
 else
+{
 _putchar('_');
+}
 }
 _putchar('\n');
 }
