@@ -9,7 +9,7 @@ int d;
 for (d = 1; d <= n; d++)
 {
 if (n <= 0)
-{	
+{
 break;
 }
 else
