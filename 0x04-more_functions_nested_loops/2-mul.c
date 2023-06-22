@@ -8,4 +8,5 @@ int mul(int a, int b)
 {
 int calc;
 calc = a * b;
-return (calc);
+return (a * b);
+}
