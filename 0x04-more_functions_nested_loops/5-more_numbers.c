@@ -13,9 +13,9 @@ putchar(i + 48);
 }
 for (n = 0; n <= 4; n++)
 {
-putchar('1');
-putchar(n + 48);
+_putchar('1');
+_putchar(n + 48);
 }
-putchar('\n');
+_putchar('\n');
 }
 }
