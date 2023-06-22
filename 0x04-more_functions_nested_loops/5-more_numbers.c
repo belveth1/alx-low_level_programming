@@ -4,13 +4,18 @@
 */
 void more_numbers(void)
 {
-int i, count;
-for (count = 1; count <= 10 ; count++)
+int i, n, count;
+for (count = 1; count <= 10; count++)
 {
-for (i = 0; i <= 14; i++)
+for (i = 0; i <= 9; i++)
 {
-_putchar(i + 48);
+putchar(i + 48);
 }
-_putchar('\n');
+for (n = 0; n <= 4; n++)
+{
+putchar('1');
+putchar(n + 48);
+}
+putchar('\n');
 }
 }
