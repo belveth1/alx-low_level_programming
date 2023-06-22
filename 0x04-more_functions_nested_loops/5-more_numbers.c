@@ -9,7 +9,7 @@ for (count = 1; count <= 10; count++)
 {
 for (i = 0; i <= 9; i++)
 {
-putchar(i + 48);
+_putchar(i + 48);
 }
 for (n = 0; n <= 4; n++)
 {
