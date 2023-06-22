@@ -4,20 +4,19 @@
 */
 void more_numbers(void)
 {
-	int num, row, count;
-
-	for (row = 1; row <= 10; ++row)
-	{
-		for (count = 0; count <= 14; ++count)
-		{
-			num = count;
-			if (count > 9)
-			{
-				_putchar(1 + 48);
-				num = count % 10;
-			}
-			_putchar(num + 48);
-		}
-		_putchar('\n');
-	}
+int n, i, count;
+for (count = 1; count <= 10; ++count)
+{
+for (i = 0; i <= 14; ++i)
+{
+n = i;
+if (i > 9)
+{
+_putchar(1 + 48);
+n = i % 10;
+}
+_putchar(n + 48);
+}
+_putchar('\n');
+}
 }
