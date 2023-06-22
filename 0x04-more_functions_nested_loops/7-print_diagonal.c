@@ -16,12 +16,12 @@ else
 {
 for (space = 1; space <= d; space++)
 {
-putchar(' ');
+_putchar(' ');
 }
-putchar(92);
+_putchar(92);
 }
-putchar('\n');
+_putchar('\n');
 }
-putchar('\n');
+_putchar('\n');
 }
 }
