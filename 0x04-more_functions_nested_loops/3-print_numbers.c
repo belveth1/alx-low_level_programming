@@ -1,3 +1,4 @@
+#include "main.h"
 /**
 *print_numbers -Write a function that print numbers from 0 tp 9
 *Return: calc for multiplication
