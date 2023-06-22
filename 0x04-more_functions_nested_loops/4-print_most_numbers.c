@@ -1,15 +1,21 @@
-#include "main.h"
+#include"main.h"
+
 /**
-*print_numbers -Write a function that print numbers from 0 tp 9 not 2 and 4
+ * print_most_numbers - print 0 - 9 apart
+ *                 from 2 and 4 and you can
+ *                 only use _putchar twice
+ * Return: Always 0 (Success)
 */
-void print_numbers(void)
+
+void print_most_numbers(void)
 {
-int i;
-for (i = 0; i <= 9; i++)
-{
-	if (i == 2 || i == 4)
-		continue;
-_putchar(i + 48);
-}
-_putchar('\n');
+	int num;
+
+	for (num = 0; num <= 9; ++num)
+	{
+		if (num == 2 || num == 4)
+			continue;
+		_putchar(num + 48);
+	}
+	_putchar('\n');
 }
