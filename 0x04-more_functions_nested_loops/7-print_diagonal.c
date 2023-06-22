@@ -6,7 +6,7 @@
 void print_diagonal(int n)
 {
 int d, space;
-for (d = 1; d <= n; d++)
+for (d = 1; d <= n; ++d)
 {
 if (n <= 0)
 {
@@ -14,7 +14,7 @@ break;
 }
 else
 {
-for (space = 1; space <= d; space++)
+for (space = 1; space <= d; ++space)
 {
 _putchar(' ');
 }
