@@ -13,7 +13,7 @@ for (i = 0; i < n; i++)
 if (i == (n - 1))
 _putchar(a[i]);
 else
-_putchar(a[i]);
+_putchar(a[i] + 48);
 _putchar(44);
 _putchar(' ');
 }
