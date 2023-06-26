@@ -11,10 +11,11 @@ int i;
 for (i = 0; i < n; i++)
 {
 if (i == (n - 1))
-_putchar('\n');
+_putchar(a[i]);
 else
 _putchar(a[i]);
 _putchar(44);
-_putchar(32);
+_putchar(' ');
 }
+_putchar('\n');
 }
