@@ -3,7 +3,7 @@
  *                                   and updates the value it points to to 98
  *@n: int parametar
  */
-void reset_to_98(int *n);
+void reset_to_98(int *n)
 {
 	*n = 98;
 }
