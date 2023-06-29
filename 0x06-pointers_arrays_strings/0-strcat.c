@@ -5,7 +5,7 @@
  *
  * Return: pointer to resulting string @dest
 */
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest, char *src)
 {
 int i, c;
 for (i = 0; dest[i] != '\0'; i++)
