@@ -7,7 +7,7 @@
 */
 char *_strncpy(char *dest, char *src, int n)
 {
-int i, c;
+int i;
 for (i = 0; src[i] < n && src[i] != '\n'; i++)
 dest[i] = src[i];
 while (i < n)
