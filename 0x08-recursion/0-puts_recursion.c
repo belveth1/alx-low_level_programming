@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * _puts_recursion - a function that prints a new line
  * @s: the string
