@@ -1,5 +1,6 @@
 #include <stdio.h>
 int helper(int n, int i);
+int is_prime_number(int n);
 /**
   * is_prime_number - check if the number prime or not
   * @n : input number
