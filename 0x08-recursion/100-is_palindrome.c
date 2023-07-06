@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <string.h>
 /**
  *is_palindrome_helper - check if the string i spalindrome or not
  *@s : string be checked
