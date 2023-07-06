@@ -1,8 +1,8 @@
 /**
- * _sqrt_recursion_wrapper - a wrapper that does the recursion bit
+  * _sqrt_recursion - a get sqrt of even number that does the recursion bit
   * @n : input number
   * Return: square root of @n or -1
-*/
+  */
 int _sqrt_recursion(int n)
 {
 if (n == 1)
