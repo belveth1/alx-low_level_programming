@@ -6,8 +6,10 @@
  * @argv: array pointer that holds the arguments passed
  * Return: Always 0 (Success)
 */
-int main(int __attribute__((unused))argc, char *argv[])
+int main(int __attribute__((unused)) argc, char *argv[])
 {
-printf("%S\n", argv[0]);
-return (0);
+	int i = 0;
+
+	printf("%s\n", argv[i]);
+	return (0);
 }
