@@ -15,9 +15,9 @@ s1 = "";
 if (s2 == NULL)
 s2 = "";
 while (s1[x] != '\0')
-a++;
+x++;
 while (s2[y] != '\0')
-b++;
+y++;
 /*+1 for our end of string character*/
 s = malloc((x * sizeof(char)) + ((y + 1) * sizeof(char)));
 if (s == NULL)
