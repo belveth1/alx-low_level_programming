@@ -8,23 +8,6 @@
  * Description: A program that prints the opcodes
  *              of its own main function.
  *              Usage: ./main number_of_bytes
- *
- * @argc: argument counter
- * @argv: argument vector
- *
- * Return: Always Successful
-*/
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-/**
- * main - Entry point
- *
- * Description: A program that prints the opcodes
- *              of its own main function.
- *              Usage: ./main number_of_bytes
- *
  * @argc: argument counter
  * @argv: argument vector
  *
