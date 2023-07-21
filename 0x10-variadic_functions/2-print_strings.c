@@ -18,7 +18,7 @@ va_list ptr;
 va_start(ptr, n);
 for (i = 0; i < n; i++)
 {
-x = va_arg(ptr,char*);
+x = va_arg(ptr, char*);
 if (x)
 printf("%s", x);
 else
