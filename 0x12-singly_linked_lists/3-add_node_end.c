@@ -29,8 +29,7 @@ else
 {
 while (ptr->next != NULL)
 ptr = ptr->next;
-}
 ptr->next = tmp;
-ptr = ptr->next;
+}
 return (*head);
 }
