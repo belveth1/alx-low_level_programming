@@ -12,37 +12,42 @@
 */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *ptr, *current;
-	size_t i;
+	listint_t *new_node, *current;
+	unsigned int index;
 
-	ptr = malloc(sizeof(listint_t));
-	if ((*head == NULL && idx != 0) || ptr == NULL)
+	current = *head; /*place first node at current*/
+
+	new_node = malloc(sizeof(listint_t));
+	if ((*head == NULL && idx != 0) || new_node == NULL)
 		return (NULL);
-	ptr->n = n;
-	ptr->next = NULL;
-	current = *head;
 
-	for (i = 0; head != NULL && i < idx - 1; i++)
+	new_node->n = n; /* add our element to the new node*/
+
+	/*iterate list to node position idx - 2*/
+	for (index = 0; head != NULL && index < idx - 1; index++)
 	{
 		current = current->next;
 		if (current == NULL)
 			return (NULL);
 	}
 
-
-	if (idx == 0)
+	if (idx == 0) /*if the index for new node is 0*/
 	{
-		ptr->next = *head;
-
-		*head = ptr;
-		return (*head);
+		/*first node will be moved to second node*/
+		new_node->next = *head;
+		/*new node will be placed as the first node*/
+		*head = new_node;
 	}
-	else if (current->next)
+	else if (current->next) /*if index where to add our new node is not 0*/
 	{
-		ptr->next = current->next;
-		current->next = ptr;
+		new_node->next = current->next; /*place current node after new node*/
+		current->next = new_node;/*set the new node at index idx*/
 	}
-	else
-		current->next = ptr;
-	return (ptr);
+	else /*if node position is not present in the list*/
+	{
+		new_node->next = NULL;/*set next addr as NULL, indicates last node*/
+		current->next = new_node;/*set the new node at the last position in list*/
+	}
+
+	return (new_node);
 }
