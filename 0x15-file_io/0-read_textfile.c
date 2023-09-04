@@ -29,10 +29,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	nbyte = read(fd, buff, letters);
 	if (nbyte == -1)
+	{
+		free(buff);
 		return (0);
+	}
 	wbyte = write(1, buff, nbyte);
 	if (wbyte == -1 || wbyte != nbyte)
+	{
+		free(buff);
 		return (0);
+	}
 	close(fd);
 	free(buff);
 	return (wbyte);
