@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	buff = allocate_buff(argv[2]);
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	do {
 		if (source == -1 || rbyte == -1)
 		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buff);
 			exit(98);
 		}
@@ -79,7 +79,7 @@ void close_file(int fd)
 	n = close(fd);
 	if (n == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
