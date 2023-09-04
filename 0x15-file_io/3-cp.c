@@ -1,85 +1,69 @@
-#include"main.h"
-void close_file(int fd);
-char *allocate_buff(char *file);
+#include "main.h"
+#define size 1024
 /**
- * main - Copies the contents of a file to another file.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * exit_errors - prints error messages and exits with exit number
  *
- * Return: 0 on success.
+ * @error: either the exit number or file descriptor
+ * @file: name of either file_in or file_out
+ * @fd: file descriptor
  *
- * Description: If the argument count is incorrect - exit code 97.
- * If file_from does not exist or cannot be read - exit code 98.
- * If file_to cannot be created or written to - exit code 99.
- * If file_to or file_from cannot be closed - exit code 100.
- */
-int main(int argc, char **argv)
+ * Return: 0 on success
+*/
+int exit_error(int error, char *file, int fd)
 {
-	int source, des, wbyte, rbyte;
-	char *buff;
+	switch (error)
+	{
+		case 97:
+			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+			exit(error);
+		case 98:
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
+			exit(error);
+		case 99:
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+			exit(error);
+		case 100:
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+			exit(error);
+		default:
+			return (0);
+	}
+}
+/**
+ * main - create a copy of file to another file
+ *
+ * @argc: argument counter
+ * @argv: argument vector
+ *
+ * Return: 0 for success.
+*/
+int main(int argc, char *argv[])
+{
+	int source_file, des_file, rbyte, wbyte;
+	int close_sfile, close_dfile;
+	char buff[size];
 
 	if (argc != 3)
+		exit_error(97, NULL, 0);
+	source_file = open(argv[1], O_RDONLY);
+	if (source_file == -1)
+		exit_error(98, argv[1], 0);
+	des_file = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (des_file == -1)
+		exit_error(99, argv[2], 0);
+	while((rbyte = read(source_file, buff, size)) != 0)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
+		if (rbyte == -1)
+			exit_error(98, argv[1], 0);
+		wbyte = write(des_file, buff, size);
+		if (wbyte == -1)
+			 exit_error(99, argv[2], 0);
 	}
-	buff = allocate_buff(argv[2]);
-	source = open(argv[1], O_RDONLY);
-	rbyte = read(source, buff, 1024);
-	des = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	do {
-		if (source == -1 || rbyte == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			free(buff);
-			exit(98);
-		}
-		wbyte = write(des, buff, 1024);
-		if (des == -1 || wbyte == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
-		rbyte = read(source, buff, 1024);
-		des = open(argv[2], O_WRONLY | O_APPEND);
-	} while (rbyte > 0);
-	free(buff);
-	close_file(source);
-	close_file(des);
+	close_sfile = close(source_file);
+	if (close_sfile == -1)
+		exit_error(100,NULL, source_file);
+	close_dfile = close(des_file);
+	if (close_dfile == -1)
+		exit_error(100, NULL, des_file);
 	return (0);
-}
-/**
- * allocate_buff - to Allocates 1024 bytes for a buffer.
- * to not use call system too much
- * @file: The name of the file buffer is storing chars for.
- *
- * Return: A pointer to  newly-allocated buffer.
- */
-char *allocate_buff(char *file)
-{
-	char *buff;
-
-	buff = malloc(sizeof(char) * 1024);
-	if (buff == NULL)
-		{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
-		exit(99);
-		}
-	return (buff);
-
-}
-/**
- * close_file - delete file descriptors.
- * @fd: The file descriptor to be closed.
- */
-void close_file(int fd)
-{
-	int n;
-
-	n = close(fd);
-	if (n == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(100);
-	}
 }
