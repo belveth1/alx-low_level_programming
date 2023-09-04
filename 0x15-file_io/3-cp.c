@@ -37,12 +37,12 @@ int main(int argc, char **argv)
 		wbyte = write(des, buff, 1024);
 		if (des == -1 || wbyte == -1)
 		{
-			dprintf(STDERR_FILENO,"Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 		rbyte = read(source, buff, 1024);
 		des = open(argv[2], O_WRONLY | O_APPEND);
-	}while (rbyte > 0);
+	} while (rbyte > 0);
 	free(buff);
 	close_file(source);
 	close_file(des);
@@ -58,11 +58,12 @@ int main(int argc, char **argv)
 char *allocate_buff(char *file)
 {
 	char *buff;
-	buff = malloc(sizeof(char) *1024);
+
+	buff = malloc(sizeof(char) * 1024);
 	if (buff == NULL)
 		{
-		dprintf(2,"Error: Can't write to %s\n", file);
-		exit (99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		exit(99);
 		}
 	return (buff);
 
@@ -74,6 +75,7 @@ char *allocate_buff(char *file)
 void close_file(int fd)
 {
 	int n;
+
 	n = close(fd);
 	if (n == -1)
 	{
