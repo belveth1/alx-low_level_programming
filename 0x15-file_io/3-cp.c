@@ -1,7 +1,7 @@
 #include "main.h"
 #define size 1024
 /**
- * exit_errors - prints error messages and exits with exit number
+ * exit_error - prints error messages and exits with exit number
  *
  * @error: either the exit number or file descriptor
  * @file: name of either file_in or file_out
@@ -51,17 +51,18 @@ int main(int argc, char *argv[])
 	des_file = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (des_file == -1)
 		exit_error(99, argv[2], 0);
-	while((rbyte = read(source_file, buff, size)) != 0)
+	while ((rbyte = read(source_file, buff, size)) != 0)
 	{
 		if (rbyte == -1)
 			exit_error(98, argv[1], 0);
+
 		wbyte = write(des_file, buff, size);
 		if (wbyte == -1)
-			 exit_error(99, argv[2], 0);
+			exit_error(99, argv[2], 0);
 	}
 	close_sfile = close(source_file);
 	if (close_sfile == -1)
-		exit_error(100,NULL, source_file);
+		exit_error(100, NULL, source_file);
 	close_dfile = close(des_file);
 	if (close_dfile == -1)
 		exit_error(100, NULL, des_file);
